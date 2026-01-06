@@ -495,7 +495,7 @@ footer{
   #searchTable ,
   #periodTable {
     width: 100%;
-    min-width: 600px;        /* шире экрана — появится скролл */
+    min-width: 500px;        /* шире экрана — появится скролл */
     border-collapse: collapse;
   }
 
@@ -508,19 +508,35 @@ footer{
     table-layout: fixed;
   }
 
-  #searchTable tbody
-  #periodTable tbody{
-    display: block;
-    max-height: 180px;
-    overflow-y: auto;        /* ✅ только вертикальный */
-    width: 100%;
-  }
+ #searchTable tbody {
+  display: block;
+  max-height: calc(3 * 40px  ); 
+  overflow-y: auto;
+  width: 100%;
+ }
+
+ #periodTable tbody {
+  display: block;
+  max-height: calc(5 * 40px ); 
+  overflow-y: auto;
+  width: 100%;
+ }
 
   #searchTable tbody tr ,
   #periodTable tbody tr {
     display: table;
     width: 100%;
     table-layout: fixed;
+    font-size: 14px;
+  }
+
+  #searchTable tbody td,
+  #periodTable tbody td {
+    height: 40px;               /* реальная высота строки */
+    padding: 6px;             /* без вертикального паддинга */          /* выравнивание текста */
+    border-bottom: 1px solid #020101;
+    text-align: center;
+    color: #020101;
   }
 
   #searchTable th,
