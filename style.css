@@ -442,14 +442,27 @@ footer{
     margin: 20px 0 30px;
   }
 
-  /* Кнопки поиска и периода */
-  .div_search_reset button,
-  .period button,
-  .period_butn button {
+  /* Кнопки поиска  */
+  .div_search_reset button{
+    width: 45%;
+    font-size: 19px;
+    height: 45px;
+    margin: 5px 0;   
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .period{
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  /* Кнопки периода */
+  .period button {
     width: 100%;
-    font-size: 16px;
+    font-size: 18px;
     height: 40px;
-    margin: 5px 0;
+    /* margin: 10px 0; */
+    
   }
 
   /* Поиск */
