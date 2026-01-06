@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Трекер росходов</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="main_init">
+    <header>
+      <h1><i class="fas fa-coins"></i> Трекер росходов</h1>
+      <p>Контролируйте свои финансы каждый день</p>
+    </header>
+    <div class="div_container">
+      <h1><i class="fas fa-plus-circle"></i>Добавить расход</h1>
+      <h3>Дата и время расхода :</h3>
+      <input type="datetime-local" id="expenseTime"/>
+      <h3>Сколько сомон :</h3>
+      <input type="number" id="money" placeholder="сомони" />
+      <h3>Категория :</h3>
+      <select id="category" onchange="toggleCustomCategory()">
+        <option value="">— Выберите категорию —</option>
+        <option value="Еда">🍎 Еда</option>
+        <option value="Транспорт">🚗 Транспорт</option>
+        <option value="Развлечения">🎬 Развлечения</option>
+        <option value="Жилье">🏠 Жилье</option>
+        <option value="Здоровье">🏥 Здоровье</option>
+        <option value="Одежда">👕 Одежда</option>
+        <option value="other">📦 Другое</option>
+      </select>
+      <input type="text" id="customCategory" placeholder="Введите свою категорию"
+        style="display: none; margin-top: 8px" />
+      <h3>Описание</h3>
+      <input type="text" id="opisanie" placeholder="На что потратили? " />
+      <button class="raskhod">Сохранить расход</button>
+    </div>
+    <div class="search">
+      <h1><i class="fas fa-search"></i> Поиск росходов</h1>
+      <div class="search_categories">
+        <div>
+          <h3>Дата</h3>
+          <input type="date" id="searchDate" />
+        </div>
+        <div>
+          <h3>Категория</h3>
+          <select id="searchCategory" onchange="toggleCustomCategory()">
+            <option value="">— Выберите категорию —</option>
+            <option value="Еда">🍎 Еда</option>
+            <option value="Транспорт">🚗 Транспорт</option>
+            <option value="Развлечения">🎬 Развлечения</option>
+            <option value="Жилье">🏠 Жилье</option>
+            <option value="Здоровье">🏥 Здоровье</option>
+            <option value="Одежда">👕 Одежда</option>
+            <option value="other">📦 Другое</option>
+          </select>
+        </div>
+        <div>
+          <h3>Сумма от</h3>
+          <input type="number" id="searchMoney" placeholder="0" />
+        </div>
+      </div>
+      <div class="div_search_reset">
+        <button class="but_search">Найти</button>
+        <button class="but_reset">Сбросить</button>
+      </div>
+      <div class="search_table">
+        <h2>Таблица расходов</h2>
+        <div class="table_1 ">  
+          <table id="searchTable">
+            <thead style="font-size: 19px;">
+              <tr>
+                <th>Дата</th>
+                <th>Сумма</th>
+                <th>Категория</th>
+                <th>Описание</th>
+              </tr>
+            </thead>
+          <tbody></tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+    <div class="expences">
+      <h1><i class="fas fa-list-ul"></i> Все расходы</h1>
+      <div class="period">
+        <button onclick="showDay()">За день</button>
+        <button onclick="showWeek()">За неделю</button>
+        <button onclick="showMonth()">За месяц</button>
+        <button class="other">Другое</button>
+      </div>
+      <div class="table_2">
+        <div class="table_expences">
+          <table id="periodTable">
+            <thead style="font-size: 19px;">
+              <tr>
+                <th>Дата</th>
+                <th>Сумма</th>
+                <th>Категория</th>
+                <th>Описание</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- <div class="period_butn">
+        <button class="Update_expence">Изменить</button>
+        <button class="Save_expence">Сохранить</button>
+      </div> -->
+    </div>
+    <footer>
+      <p>📊 Трекер расходов</p>
+      <p id="footerStats">Загрузка...</p>
+    </footer>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
